@@ -1,7 +1,9 @@
 {
   "name": "dof_conf",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "moment": "^2.23.0"
+  },
   "devDependencies": {
     "bootstrap": "4.1.2",
     "browser-sync": "^2.14.0",
