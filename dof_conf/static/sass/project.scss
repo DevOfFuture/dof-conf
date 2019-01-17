@@ -1,6 +1,10 @@
 @import "custom_bootstrap_vars";
 @import "bootstrap";
 
+a {
+  transition: all .3s ease-in-out;
+}
+
 .navbar {
   top: 0px;
   box-shadow: 0 0 16px 0 rgba(32, 32, 47, 0.16);
@@ -84,5 +88,45 @@
   .value {
     font-size: 1.5rem;
     color: #000;
+  }
+}
+
+.section {
+  padding: 4rem 0;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+.speaker-card {
+  box-shadow: 0 0 16px 0 rgba(32, 32, 47, .16);
+  border: none;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-style: italic;
+    color: #555;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-nav {
+  margin-top: auto;
+}
+
+.social-link {
+  margin-right: .5rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 }

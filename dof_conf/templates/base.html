@@ -21,6 +21,7 @@
     {% block css %}
       <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
     {% endblock css %}
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
   </head>
 
@@ -96,9 +97,97 @@
     </header>
 
     <main>
-      <div class="container">
-        {% block content %}{% endblock content %}
-      </div>
+      <section class="section" id="speakers">
+        <header class="text-center d-flex flex-column align-items-center">
+          <i class="fas fa-microphone-alt fa-3x text-primary mb-2"></i>
+          <h2>Speakers</h2>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-1.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 1</h3>
+                  <p>Quia provident quasi, temporibus commodi maxime voluptatem minima aut laudantium.</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-2.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 2</h3>
+                  <p>Porro laboriosam adipisci aperiam reiciendis saepe temporibus laudantium consequatur animi</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-3.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 3</h3>
+                  <p>Quo exercitationem, magnam quia quos rerum distinctio nisi pariatur assumenda eos iste</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-4.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 4</h3>
+                  <p>Repudiandae eos architecto vero eligendi dignissimos itaque odit sunt ad quis quia facere</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
     </main>
 
     {% block javascript %}
