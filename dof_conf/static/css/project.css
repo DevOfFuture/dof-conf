@@ -7788,3 +7788,6 @@ a {
 .time {
   color: #6600ff;
   margin-bottom: 0; }
+
+.venue {
+  background: url("../images/venue-bg.jpg") no-repeat; }
