@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="2019 DevOfFuture Conference">
     <meta name="author" content="DevOfFuture">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-touch-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/favicon-96x96.png' %}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/favicon-16x16.png' %}" sizes="16x16">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -18,13 +21,261 @@
     {% block css %}
       <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
     {% endblock css %}
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
   </head>
 
-  <body>
+  <body data-spy="scroll">
 
-    {% block content %}
-      <h1>Use this document as a starting point for your project.</h1>
-    {% endblock content %}
+    <header id="home">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top hidden">
+        <div class="container">
+          <h1 class="navbar-brand m-0">
+            <a href="">
+              <img src="{% static 'images/logo.png' %}" alt="DevOfFuture" height="32">
+            </a>
+          </h1>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#speakers">Speakers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#schedule">Schedule</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#venue">Venue</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="hero-title">DevOfFuture</h2>
+            <div class="event-date">
+              <span>10 February 2019 @ 8 AM | Dschang, West, Cameroon</span>
+            </div>
+            <h3 class="event-name">DevOfFuture Conference 2019</h3>
+            <p class="event-description">An opportunity to move ideas forward, and learn from each other along the way.</p>
+            <div class="event-counter-wrapper">
+              <h4 class="text-muted mb-5">Event starts in</h4>
+              <div class="event-counter">
+                <div class="time-value">
+                  <span class="value days">00</span>
+                  <span class="label">Days</span>
+                </div>
+                <div class="time-value">
+                  <span class="value hours">00</span>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="time-value">
+                  <span class="value minutes">00</span>
+                  <span class="label">Minutes</span>
+                </div>
+                <div class="time-value">
+                  <span class="value seconds">00</span>
+                  <span class="label">Seconds</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="speakers">
+        <header class="text-center d-flex flex-column align-items-center">
+          <i class="fas fa-microphone-alt fa-3x text-primary mb-2"></i>
+          <h2>Speakers</h2>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-1.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 1</h3>
+                  <p>Quia provident quasi, temporibus commodi maxime voluptatem minima aut laudantium.</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-2.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 2</h3>
+                  <p>Porro laboriosam adipisci aperiam reiciendis saepe temporibus laudantium consequatur animi</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-3.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 3</h3>
+                  <p>Quo exercitationem, magnam quia quos rerum distinctio nisi pariatur assumenda eos iste</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card speaker-card">
+                <img src="{% static 'images/speaker-4.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker 4</h3>
+                  <p>Repudiandae eos architecto vero eligendi dignissimos itaque odit sunt ad quis quia facere</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section class="section" id="schedule">
+        <header class="text-center d-flex flex-column align-items-center">
+          <i class="far fa-clock fa-3x text-primary mb-2"></i>
+          <h2>Schedule</h2>
+        </header>
+        <div class="container timeline">
+          <div class="timeline-item">
+            <div class="card">
+              <div class="media">
+                <img src="{% static 'images/speaker-1.jpg' %}" class="mr-3" alt="" width="75">
+                <div class="media-body">
+                  <h3>How to contribute to Open Source</h3>
+                  <p class="time">
+                    <time>09:00am</time>
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, optio commodi?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="card">
+              <div class="media">
+                <img src="{% static 'images/speaker-2.jpg' %}" class="mr-3" alt="" width="75">
+                <div class="media-body">
+                  <h3>Git basics</h3>
+                  <p class="time">
+                    <time>11:00am</time>
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, optio commodi?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="card">
+              <div class="media">
+                <img src="{% static 'images/speaker-3.jpg' %}" class="mr-3" alt="" width="75">
+                <div class="media-body">
+                  <h3>How to run an Open Source Project</h3>
+                  <p class="time">
+                    <time>13:00am</time>
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, optio commodi?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="card">
+              <div class="media">
+                <img src="{% static 'images/speaker-4.jpg' %}" class="mr-3" alt="" width="75">
+                <div class="media-body">
+                  <h3>Lorem ipsum, dolor sit amet</h3>
+                  <p class="time">
+                    <time>15:00am</time>
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, optio commodi?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section venue" id="venue">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 offset-2">
+              <div class="card">
+                <div class="card-body">
+                  <header class="text-center d-flex flex-column align-items-center">
+                    <i class="fas fa-map-marker-alt fa-3x text-primary mb-2"></i>
+                    <h2>Venue</h2>
+                  </header>
+                  <div class="text-center mb-3 text-muted">
+                    <p>Nouvic Corporation<br>Immeuble Élégance Pressing<br>560034
+                    </p>
+                  </div>
+                  <div class="text-center text-muted">
+                    <p>Tel. 1234567890<br>Email us at. info@nouvic.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     {% block javascript %}
       <script src="{% static 'js/vendors.js' %}"></script>
