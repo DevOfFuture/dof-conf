@@ -6,7 +6,7 @@ var minutesText = $('.value.minutes');
 var secondsText = $('.value.seconds');
 
 var updateCounter = function() {
-    var eventDate = moment(new Date('2019-02:10 08:00'));
+    var eventDate = moment(new Date('2019-03-09 08:00'));
     var now = moment(new Date());
     // This is ugly but it will do for now ;-)
     daysText.text(eventDate.diff(now, 'days'));
