@@ -1,1 +1,160 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <section class="section" id="speakers">
+    <header class="text-center d-flex flex-column align-items-center">
+      <i class="fas fa-microphone-alt fa-3x text-primary mb-2"></i>
+      <h2>Speakers</h2>
+    </header>
+    <div class="container">
+      <div class="row">
+        {% for speaker in speakers %}
+          <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+            <div class="card speaker-card">
+              {% if speaker.photo %}
+                <img src="{{ speaker.photo.url }}" class="card-img-top" alt="">
+              {% else %}
+                <img src="{% static 'images/default-avatar.png' %}" class="card-img-top" alt="" width="255" height="255">
+              {% endif %}
+              <div class="card-body">
+                <h3>{{ speaker.name }}</h3>
+                <p>{{ speaker.about|truncatechars:100 }}</p>
+                <div class="social-nav">
+                  {% if speaker.github %}
+                    <a href="{{ speaker.github }}" class="social-link" target="_blank" rel="noopener">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  {% endif %}
+                  {% if speaker.facebook %}
+                    <a href="{{ speaker.facebook }}" class="social-link" target="_blank" rel="noopener">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  {% endif %}
+                  {% if speaker.twitter %}
+                    <a href="{{ speaker.twitter }}" class="social-link" target="_blank" rel="noopener">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  {% endif %}
+                  {% if speaker.linkedin %}
+                    <a href="{{ speaker.linkedin }}" class="social-link" target="_blank" rel="noopener">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          {% for item in "x"|ljust:"4" %}
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex mb-4">
+              <div class="card speaker-card">
+                <img src="{% static 'images/default-avatar.png' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h3>Speaker {{ forloop.counter }}</h3>
+                  <p>Quia provident quasi, temporibus commodi maxime voluptatem minima aut laudantium.</p>
+                  <div class="social-nav">
+                    <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="section" id="schedule">
+    <header class="text-center d-flex flex-column align-items-center">
+      <i class="far fa-clock fa-3x text-primary mb-2"></i>
+      <h2>Schedule</h2>
+    </header>
+    <div class="container timeline">
+      {% for item in schedule %}
+        <div class="timeline-item">
+          <div class="card">
+            <div class="media">
+              {% if item.speaker and item.speaker.photo %}
+                <img src="{{ item.speaker.photo.url }}" class="mr-3" alt="{{ speaker.name }}" width="75">
+              {% else %}
+                <img src="{% static 'images/default-avatar.png' %}" class="mr-3" alt="" width="75">
+              {% endif %}
+              <div class="media-body">
+                <h3>{{ item.title }}</h3>
+                <p class="time">
+                  <time>{{ item.datetime }}</time>
+                </p>
+                <p>{{ item.about|truncatechars:100 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        {% for item in "x"|ljust:"4" %}
+          <div class="timeline-item">
+            <div class="card">
+              <div class="media">
+                <img src="{% static 'images/default-avatar.png' %}" class="mr-3" alt="" width="75">
+                <div class="media-body">
+                  <h3>Talk {{ forloop.counter }}</h3>
+                  <p class="time">
+                    <time>{% now 'M, d Y @ h:i' %}</time>
+                  </p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, inventore! Illum, modi itaque ratione ea, temporibus dolorem culpa, necessitatibus reprehenderit maiores sit nobis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="section venue" id="venue">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-2">
+          <div class="card">
+            <div class="card-body">
+              <header class="text-center d-flex flex-column align-items-center">
+                <i class="fas fa-map-marker-alt fa-3x text-primary mb-2"></i>
+                <h2>Venue</h2>
+              </header>
+              <div class="text-center mb-3 text-muted">
+                <p>Nouvic Corporation<br>Immeuble Élégance Pressing<br>560034
+                </p>
+              </div>
+              <div class="text-center text-muted">
+                <p>Tel. 1234567890<br>Email us at. info@nouvic.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <header class="text-center d-flex flex-column align-items-center">
+        <i class="far fa-star fa-3x text-primary mb-2"></i>
+        <h2>Our Sponsors</h2>
+      </header>
+      <div class="row">
+        <a href="http://nouviconline.com" target="_blank" rel="noopener" class="col-md-4 offset-2">
+          <img src="{% static 'images/nouvic.png' %}" alt="Nouvic Corporation" class="w-100">
+        </a>
+        <a href="https://weloobe.com/" target="_blank" rel="noopener" class="col-md-4">
+          <img src="{% static 'images/weloobe.jpeg' %}" alt="Weloobe" class="w-100">
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
