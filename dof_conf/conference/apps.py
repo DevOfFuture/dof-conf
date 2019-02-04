@@ -8,6 +8,6 @@ class ConferenceConfig(AppConfig):
 
     def ready(self):
         try:
-            import dof_conf.conference.signals
+            import dof_conf.conference.signals  # noqa F401
         except ImportError:
             pass
