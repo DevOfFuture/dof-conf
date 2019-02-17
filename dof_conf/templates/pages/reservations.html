@@ -2,30 +2,10 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Reservations{% endblock title %}
+{% block title %}Reservations | {{ block.super }}{% endblock title %}
 
 {% block content %}
-  <section class="section bg-light pt-0" id="reservations">
-    <div class="bg-dark text-white py-5">
-      <div class="container">
-        <header class="text-center d-flex flex-column align-items-center">
-          <i class="fas fa-bookmark fa-3x mb-2"></i>
-          <h2 class="mb-3">Reservations</h2>
-          <p class="lead">Limited seating available. Hurry & save your spot now.</p>
-        </header>
-      </div>
-    </div>
-    <div class="map-container">
-      <div id="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.8382271837336!2d10.05169381476539!3d5.441520496053659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjYnMjkuNSJOIDEwwrAwMycxNC4wIkU!5e0!3m2!1sen!2scm!4v1550432829492" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 offset-md-6 col-sm-12 my-5 bg-white card p-3">
-            {% crispy form %}
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="section bg-light">
+    {% include 'partials/reservations.html' with form=form %}
   </section>
 {% endblock content %}
