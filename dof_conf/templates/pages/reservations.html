@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Reservations | {{ block.super }}{% endblock title %}
+
+{% block content %}
+  <section class="section bg-light">
+    {% include 'partials/reservations.html' with form=form %}
+  </section>
+{% endblock content %}
