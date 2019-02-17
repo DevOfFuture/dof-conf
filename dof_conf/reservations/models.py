@@ -9,7 +9,7 @@ class Reservation(BaseModel):
     Stores info about a single person who reserved a spot at the conference.
     """
     name = models.CharField(_('name'), max_length=100)
-    email = models.CharField(_('email address'), max_length=254, unique=True)
+    email = models.EmailField(_('email address'), max_length=254, unique=True)
     number_of_tees = models.PositiveSmallIntegerField(
         _('number of tees'),
         help_text=_('The number of T-Shirts we should save for you.'),

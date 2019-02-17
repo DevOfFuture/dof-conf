@@ -99,10 +99,12 @@ a {
   }
 }
 
-.speaker-card {
+.card {
   box-shadow: 0 0 16px 0 rgba(32, 32, 47, .16);
   border: none;
+}
 
+.speaker-card {
   h3 {
     margin-bottom: 1rem;
   }
@@ -161,8 +163,6 @@ a {
     width: 100%;
     padding: 15px;
     text-align: left;
-    box-shadow: 0 0 16px 0 rgba(32, 32, 47, .16);
-    border: none;
 
     @include media-breakpoint-up(lg) {
       &:before {
@@ -233,4 +233,12 @@ a {
 
 .venue {
   background: url('../images/venue-bg.jpg') no-repeat;
+}
+
+.reservation-form-wrapper {
+  max-width: 400px;
+}
+
+.asteriskField {
+    display: none;
 }
