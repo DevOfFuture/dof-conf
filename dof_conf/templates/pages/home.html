@@ -57,7 +57,7 @@
               {% endif %}
               <div class="card-body">
                 <h3>{{ speaker.name }}</h3>
-                <p>{{ speaker.about|truncatechars:100 }}</p>
+                <p>{{ speaker.about }}</p>
                 <div class="social-nav">
                   {% if speaker.github %}
                     <a href="{{ speaker.github }}" class="social-link" target="_blank" rel="noopener">
@@ -135,7 +135,7 @@
                 <p class="time">
                   <time>{{ item.datetime }}</time>
                 </p>
-                <p>{{ item.about|truncatechars:100 }}</p>
+                <p>{{ item.about }}</p>
               </div>
             </div>
           </div>
