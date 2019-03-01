@@ -64,7 +64,7 @@ class ScheduleItem(BaseModel):
     class Meta:
         verbose_name = _('schedule item')
         verbose_name_plural = _('schedule items')
-        ordering = ('-datetime',)
+        ordering = ('datetime',)
 
     def __str__(self):
         return self.title
